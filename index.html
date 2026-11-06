@@ -27,8 +27,8 @@
 <body>
 
 <header>
-  <h1>Semiología Médica - Síndromes Clínicos</h1>
-  <p>Basado en Barré - Califano | Módulos de Enseñanza Universitaria</p>
+  <h1>Semiología Médica - Plataforma Sindromática</h1>
+  <p>Basado en el índice oficial | Barré & Califano</p>
 </header>
 
 <nav id="moduleNav">
@@ -40,42 +40,54 @@
 </main>
 
 <script>
-  // Estructura modular de síndromes basada en Barré - Califano
+  // Estructura ordenada estrictamente según el índice del manual
   const sindromes = [
     {
-      id: "resp-condensacion",
-      area: "Aparato Respiratorio",
+      id: "cap3-resp-condensacion",
+      capitulo: "Capítulo 3: Semiotecnia del tórax (Aparato Respiratorio)",
       titulo: "Síndrome de Condensación Pulmonar",
-      fisiopatologia: "Reemplazo del aire alveolar por exudado, trasudado o tejido tumoral.",
+      fisiopatologia: "Reemplazo del aire alveolar por exudado, trasudado o tejido sólido.",
       hallazgos: {
         inspeccion: "Disminución de la expansión respiratoria en el lado afectado.",
         palpacion: "Aumento de las vibraciones vocales (frémito táctil).",
-        percusion: "Matidez o submatidez sobre la zona afectada.",
-        auscultación: "Soplo tubario, desaparición del murmullo vesicular, estertores crepitantes."
+        percusion: "Matidez o submatidez localizada.",
+        auscultación: "Soplo tubario, estertores crepitantes, abolición del murmullo vesicular."
       }
     },
     {
-      id: "resp-derrames pleural",
-      area: "Aparato Respiratorio",
+      id: "cap3-resp-derrame",
+      capitulo: "Capítulo 3: Semiotecnia del tórax (Aparato Respiratorio)",
       titulo: "Síndrome de Derrame Pleural",
-      fisiopatologia: "Acumulación anormal de líquido en la cavidad pleural que comprime el parénquima pulmonar.",
+      fisiopatologia: "Acumulación líquida en la cavidad pleural que comprime el parénquima.",
       hallazgos: {
-        inspeccion: "Movilidad disminuida en el hemitórax afectado, abovedamiento de espacios intercostales.",
-        palpacion: "Absolición o disminución franca de las vibraciones vocales.",
-        percusion: "Matidez hídrica de límite superior concóntrico (línea de Damoiseau).",
-        auscultación: "Silencio auscultatorio o disminución del murmullo vesicular; soplos pleurales en el límite superior."
+        inspeccion: "Movilidad disminuida, abovedamiento e espacios intercostales amplios.",
+        palpacion: "Abolición o franca disminución de las vibraciones vocales.",
+        percusion: "Matidez hídrica con límite superior cóncavo (curva de Damoiseau).",
+        auscultación: "Silencio auscultatorio o abolición del murmurlo vesicular."
       }
     },
     {
-      id: "cv-insuficiencia-cardiaca",
-      area: "Aparato Cardiovascular",
+      id: "cap4-cv-insuficiencia",
+      capitulo: "Capítulo 4: Semiotecnia del tórax (Aparato Circulatorio)",
       titulo: "Síndrome de Insuficiencia Cardíaca Congestiva",
-      fisiopatologia: "Incapacidad del corazón para bombear sangre a los requerimientos metabólicos o hacerlo con presiones de llenado elevadas.",
+      fisiopatologia: "Incapacidad miocárdica para mantener el volumen minuto adecuado a expensas de presiones elevadas.",
       hallazgos: {
-        inspeccion: "Ingurgitación yugular, edemas periféricos vespertinos con fóvea, cianosis acral.",
-        palpacion: "Desplazamiento del choque de punta (latido apexiano hacia abajo y afuera), hepatomegalia dolorosa.",
-        percusion: "Aumento del área de matidez cardíaca (cardiomegalia).",
-        auscultación: "Taquicardia, ruidos agregados (tercer ruido o galope ventricular), soplos valvulares asociados."
+        inspeccion: "Ingurgitación yugular, edemas vespertinos con fóvea, cianosis periférica.",
+        palpacion: "Desplazamiento del choque de punta hacia abajo y afuera (cardiomegalia).",
+        percusion: "Aumento del área de matidez cardíaca absoluta y relativa.",
+        auscultación: "Taquicardia, tercer o cuarto ruido (ritmo de galope), soplos funcionales."
+      }
+    },
+    {
+      id: "cap7-abd-ascitis",
+      capitulo: "Capítulo 7: Semiotecnia del abdomen",
+      titulo: "Síndrome Ascítico",
+      fisiopatologia: "Acumulación de líquido libre en la cavidad peritoneal por hipertensión portal u otros factores.",
+      hallazgos: {
+        inspeccion: "Abdomen globuloso ('en batracio'), eversión umbilical, circulación colateral.",
+        palpacion: "Signo de la ola positivo, peloteo hepático (signo del témpano).",
+        percusion: "Matidez desplazable en flancos y matidez fija de concavidad superior.",
+        auscultación: "Ruidos hidroaéreos normales o disminuidos; soplos vasculares."
       }
     }
   ];
@@ -88,7 +100,6 @@
   }
 
   function loadModule(index) {
-    // Actualizar clases activas en los botones
     const buttons = document.querySelectorAll('nav button');
     buttons.forEach((btn, idx) => {
       if(idx === index) btn.classList.add('active');
@@ -100,7 +111,7 @@
     content.innerHTML = `
       <div class="card">
         <h2>${s.titulo}</h2>
-        <small><strong>Área:</strong> ${s.area}</small>
+        <small><strong>${s.capitulo}</strong></small>
         <p><strong>Fisiopatología:</strong> ${s.fisiopatologia}</p>
       </div>
       <div class="card">
@@ -115,7 +126,6 @@
     `;
   }
 
-  // Inicializar
   renderNav();
   loadModule(0);
 </script>
