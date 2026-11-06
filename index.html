@@ -1,46 +1,4 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Semiología y Medicina Clínica - Netter & Barré-Califano</title>
-  <style>
-    :root {
-      --primary: #1e3a8a;
-      --secondary: #0284c7;
-      --bg: #f8fafc;
-      --card-bg: #ffffff;
-      --text: #0f172a;
-    }
-    body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
-    header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; }
-    nav { background: var(--secondary); display: flex; overflow-x: auto; padding: 0.5rem; gap: 0.5rem; }
-    nav button { background: rgba(255,255,255,0.15); border: none; color: white; padding: 0.6rem 1rem; border-radius: 4px; cursor: pointer; white-space: nowrap; }
-    nav button:hover, nav button.active { background: white; color: var(--primary); font-weight: bold; }
-    main { max-width: 900px; margin: 2rem auto; padding: 0 1rem; }
-    .card { background: var(--card-bg); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1rem; }
-    .grid-item { background: #f1f5f9; padding: 1rem; border-left: 4px solid var(--secondary); border-radius: 4px; }
-    h2 { color: var(--primary); margin-top: 0; }
-  </style>
-</head>
-<body>
-
-<header>
-  <h1>Plataforma de Semiología y Medicina Clínica</h1>
-  <p>Integración Netter (Medicina Interna) & Barré-Califano (Semiología Clásica)</p>
-</header>
-
-<nav id="moduleNav">
-  <!-- Navegación dinámica -->
-</nav>
-
-<main id="moduleContent">
-  <!-- Contenido activo -->
-</main>
-
-<script>
-  const sindromes = [
+const sindromes = [
     {
       id: "netter-aortica-estenosis",
       capitulo: "Capítulo 3 (Netter / Califano): Valvulopatías Aórticas",
@@ -67,7 +25,7 @@
     },
     {
       id: "netter-condensacion-pulmonar",
-      capitulo: "Capítulo de Neumología (Netter) & Semiología Pulmonar (Califano)",
+      capitulo: "Pulmones y vías respiratorias (Netter) & Semiología Pulmonar (Califano)",
       titulo: "Síndrome de Condensación Pulmonar",
       fisiopatologia: "Relleno alveolar por exudado, trasudado o tejido tumoral, con persistencia de la permeabilidad bronquial (ej. Neumonía lobar).",
       hallazgos: {
@@ -79,7 +37,7 @@
     },
     {
       id: "netter-derrame-pleural",
-      capitulo: "Capítulo de Neumología (Netter) & Semiología Pulmonar (Califano)",
+      capitulo: "Pulmones y vías respiratorias (Netter) & Semiología Pulmonar (Califano)",
       titulo: "Síndrome de Derrame Pleural",
       fisiopatologia: "Acumulación patológica de líquido en el espacio pleural por aumento de presión hidrostática, disminución de oncótica o inflamación.",
       hallazgos: {
@@ -88,46 +46,29 @@
         percusion: "Matidez hídrica franca (de escudete o con línea parabólica de Damoisau).",
         auscultación: "Silencio auscultatorio (abolición del murmullo vesicular) y egofonía en el límite superior del derrame."
       }
+    },
+    {
+      id: "netter-sindrome-nefritico",
+      capitulo: "Riñones, vías urinarias y órganos sexuales (Netter)",
+      titulo: "Síndrome Nefrítico Agudo",
+      fisiopatologia: "Inflamación glomerular aguda que provoca proliferación celular, obstrucción capilar y caída brusca de la tasa de filtración glomerular.",
+      hallazgos: {
+        inspeccion: "Edema matutino blando de predominio palpebral/facial, oliguria y signos de hipertensión arterial.",
+        palpacion: "Pulso arterial duro por hipertensión arterial, puño percusión lumbar a veces discretamente dolorosa.",
+        percusion: "Sin alteraciones francas en áreas toracoabdominales habituales.",
+        auscultación: "Ruidos cardíacos normofonéticos, posible refuerzo del segundo ruido en foco aórtico por hipertensión arterial sistémica."
+      }
+    },
+    {
+      id: "netter-sindrome-nefrotico",
+      capitulo: "Riñones, vías urinarias y órganos sexuales (Netter)",
+      titulo: "Síndrome Nefrótico",
+      fisiopatologia: "Alteración de la permeabilidad de la membrana basal glomerular que genera proteinuria masiva (>3.5g/24h), hipoalbuminemia y edema generalizado.",
+      hallazgos: {
+        inspeccion: "Edema generalizado (anasarca), palidez cutánea (por hemodilución y anemia crónica) y signo de la fóvea marcado.",
+        palpacion: "Edemas blandos, indoloros y fríos que dejan fóvea profunda en miembros inferiores y región sacra.",
+        percusion: "Posible matidez desplazable en flancos por ascitis secundaria a la hipoalbuminemia severa.",
+        auscultación: "Murmullo vesicular conservado; ruidos cardíacos netos sin soplos agregados por la patología de base."
+      }
     }
   ];
-
-  function renderNav() {
-    const nav = document.getElementById('moduleNav');
-    nav.innerHTML = sindromes.map((s, idx) => 
-      `<button onclick="loadModule(${idx})" class="${idx === 0 ? 'active' : ''}">${s.titulo}</button>`
-    ).join('');
-  }
-
-  function loadModule(index) {
-    const buttons = document.querySelectorAll('nav button');
-    buttons.forEach((btn, idx) => {
-      if(idx === index) btn.classList.add('active');
-      else btn.classList.remove('active');
-    });
-
-    const s = sindromes[index];
-    const content = document.getElementById('moduleContent');
-    content.innerHTML = `
-      <div class="card">
-        <h2>${s.titulo}</h2>
-        <small><strong>${s.capitulo}</strong></small>
-        <p><strong>Fisiopatología:</strong> ${s.fisiopatologia}</p>
-      </div>
-      <div class="card">
-        <h3>Examen Físico y Maniobras Semiológicas</h3>
-        <div class="grid">
-          <div class="grid-item"><strong>Inspección / Pulso:</strong> ${s.hallazgos.inspeccion}</div>
-          <div class="grid-item"><strong>Palpación:</strong> ${s.hallazgos.palpacion}</div>
-          <div class="grid-item"><strong>Percusión:</strong> ${s.hallazgos.percusion}</div>
-          <div class="grid-item"><strong>Auscultación:</strong> ${s.hallazgos.auscultación}</div>
-        </div>
-      </div>
-    `;
-  }
-
-  renderNav();
-  loadModule(0);
-</script>
-
-</body>
-</html>
