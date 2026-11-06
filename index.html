@@ -112,6 +112,30 @@
         percusion: "Posible matidez desplazable en flancos por ascitis secundaria a la hipoalbuminemia severa.",
         auscultación: "Murmullo vesicular conservado; ruidos cardíacos netos sin soplos agregados por la patología de base."
       }
+    },
+    {
+      id: "netter-hipertiroidismo",
+      capitulo: "Endocrinología (Netter): Trastornos de la Glándula Tiroides",
+      titulo: "Síndrome de Hipertiroidismo",
+      fisiopatologia: "Exceso circulante de hormonas tiroideas (T3 y T4) que genera un estado hipermetabólico generalizado y aumento de la sensibilidad adrenérgica.",
+      hallazgos: {
+        inspeccion: "Bocio difuso, exoftalmos (en enfermedad de Graves), pérdida de peso con apetito conservado, temblor fino distal y piel caliente/húmeda.",
+        palpacion: "Glándula tiroides aumentada de tamaño, firme o elástica, con posible frémito palpable (thrill) sobre los lóbulos tiroideos.",
+        percusion: "Sin modificaciones torácicas específicas atribuibles al cuadro glandular.",
+        auscultación: "Taquicardia sinusal, soplos sistólicos eyectivos hiperdinámicos y presencia ocasional de soplo sistólico-diastólico vascular tiroideo."
+      }
+    },
+    {
+      id: "netter-hipotiroidismo",
+      capitulo: "Endocrinología (Netter): Trastornos de la Glándula Tiroides",
+      titulo: "Síndrome de Hipotiroidismo",
+      fisiopatologia: "Déficit de hormonas tiroideas que disminuye el metabolismo basal, alterando la síntesis proteica y generando acumulación de glucosaminoglicanos (mixedema).",
+      hallazgos: {
+        inspeccion: "Facie mixedematosa (piel seca, áspera, pálida-amarillenta, macroglosia, edema periorbitario), alopecia distal de cejas y bradipsiquia.",
+        palpacion: "Piel fría, pastosa, sin dejar fóvea marcada (edema duro o mixedema), pulso lento (bradicardia).",
+        percusion: "Aumento relativo del área de matidez cardíaca si se asocia a derrame pericárdico tardío.",
+        auscultación: "Bradicardia franca, tonos cardíacos apagados y soplos hipofonéticos por la baja contractilidad miocárdica."
+      }
     }
   ];
 
@@ -140,7 +164,7 @@
       <div class="card">
         <h3>Examen Físico y Maniobras Semiológicas</h3>
         <div class="grid">
-          <div class="grid-item"><strong>Inspección / Pulso:</strong> ${s.hallazgos.inspeccion}</div>
+          <div class="grid-item"><strong>Inspección:</strong> ${s.hallazgos.inspeccion}</div>
           <div class="grid-item"><strong>Palpación:</strong> ${s.hallazgos.palpacion}</div>
           <div class="grid-item"><strong>Percusión:</strong> ${s.hallazgos.percusion}</div>
           <div class="grid-item"><strong>Auscultación:</strong> ${s.hallazgos.auscultación}</div>
