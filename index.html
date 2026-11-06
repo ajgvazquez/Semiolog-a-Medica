@@ -160,6 +160,30 @@
         percusion: "Timpanismo generalizado por acumulación de gas proximal al sitio de obstrucción.",
         auscultación: "Ruidos hidroaéreos aumentados, metálicos y de lucha (borborigmos audibles) en etapas iniciales; silencio abdominal (íleo paralítico secundario) en fases avanzadas."
       }
+    },
+    {
+      id: "netter-sindrome-meningeo",
+      capitulo: "Enfermedades Neurológicas (Netter) & Semiología Neurológica (Califano)",
+      titulo: "Síndrome Meníngeo",
+      fisiopatologia: "Inflamación aguda de las leptomeninges (infecciosa o irritativa) que provoca hipertensión endocraneana y estiramiento de raíces nerviosas espinales.",
+      hallazgos: {
+        inspeccion: "Actitud en 'gatillo de fusil' (decúbito lateral con flexión de piernas y cabeza hacia atrás), facies de dolor, hiperestesia cutánea y fotofobia.",
+        palpacion: "Rigidez de nuca franca al intentar la flexión pasiva del cuello; contractura de músculos paravertebrales y abdominales (vientre en batea).",
+        percusion: "Sin alteraciones percutorias toracoabdominales específicas de origen neurológico.",
+        auscultación: "Tonos cardíacos normales; bradicardia relativa en fases iniciales de hipertensión endocraneana."
+      }
+    },
+    {
+      id: "netter-sindrome-articular",
+      capitulo: "Aparato Locomotor (Netter) & Semiología Reumatológica (Califano)",
+      titulo: "Síndrome Articular Inflamatorio (Artritis)",
+      fisiopatologia: "Proceso inflamatorio de la membrana sinovial mediado por complejos inmunes o citoquinas, que produce derrame articular, hiperemia y destrucción tisular.",
+      hallazgos: {
+        inspeccion: "Tumefacción articular difusa, eritema (rubor), deformidades anatómicas (ej. desviación ulnar en manos) y actitud antiálgica.",
+        palpacion: "Aumento de la temperatura local (calor), dolor a la presión directa (dolor), impotencia funcional y signo del 'choque rotuliano' o derrame articular positivo.",
+        percusion: "No aplicable de forma diagnóstica habitual sobre la superficie articular.",
+        auscultación: "Presencia de crepitación áspera o chasquidos durante los movimientos de flexoextensión articular."
+      }
     }
   ];
 
@@ -189,17 +213,4 @@
         <h3>Examen Físico y Maniobras Semiológicas</h3>
         <div class="grid">
           <div class="grid-item"><strong>Inspección:</strong> ${s.hallazgos.inspeccion}</div>
-          <div class="grid-item"><strong>Palpación:</strong> ${s.hallazgos.palpacion}</div>
-          <div class="grid-item"><strong>Percusión:</strong> ${s.hallazgos.percusion}</div>
-          <div class="grid-item"><strong>Auscultación:</strong> ${s.hallazgos.auscultación}</div>
-        </div>
-      </div>
-    `;
-  }
-
-  renderNav();
-  loadModule(0);
-</script>
-
-</body>
-</html>
+          <div class="grid-item"><strong>Palpación:</strong> ${s.hallazgos
