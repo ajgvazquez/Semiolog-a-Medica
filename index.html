@@ -28,6 +28,11 @@
     .card { background: var(--card-bg); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-top: 1rem; }
     .grid-item { background: #f1f5f9; padding: 1rem; border-left: 4px solid var(--secondary); border-radius: 4px; }
+    
+    .image-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1rem; }
+    .image-box { background: #f8fafc; border: 2px dashed #cbd5e1; padding: 1rem; text-align: center; border-radius: 6px; }
+    .image-box img { max-width: 100%; height: auto; border-radius: 4px; margin-top: 0.5rem; }
+    
     .ref-box { background: #fffbeb; border: 1px solid #fde68a; padding: 1rem; border-radius: 6px; margin-top: 1rem; }
     .ref-box h4 { margin-top: 0; color: #b45309; }
     h2 { color: var(--primary); margin-top: 0; }
@@ -56,6 +61,8 @@
           fisiopatologia: "Sobrecarga crónica de presión ventricular izquierda que conduce a hipertrofia concéntrica compensadora y eventual falla miocárdica.",
           netterRef: "Netter's Internal Medicine: Patología Valvular Aórtica e Hipertrofia Ventricular.",
           califanoRef: "Barré-Califano: Semiología de los pulsos arteriales (Parvus y Tardus) y auscultación de soplos irradiados a cuello.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Valvulopatia+Aortica",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Pulso+Parvus+y+Tardus",
           hallazgos: {
             inspeccion: "Pulso arterial parvus y tardus; choque de punta sostenido no desplazado en fases iniciales.",
             palpacion: "Frémito sistólico palpable en segundo espacio intercostal derecho y escotadura supraesternal.",
@@ -69,6 +76,8 @@
           fisiopatologia: "Incapacidad del miocardio para eyectar un volumen sistólico adecuado, elevando las presiones de llenado diastólico retrógradas.",
           netterRef: "Netter's Internal Medicine: Insuficiencia Cardíaca Congestiva y Remodelado Ventricular.",
           califanoRef: "Barré-Califano: Inspección de ingurgitación yugular, búsqueda de reflujo hepatoyugular y auscultación de tercer ruido.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Remodelado+Cardiaco",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Ingurgitacion+Yugular",
           hallazgos: {
             inspeccion: "Ingurgitación yugular a 45°, cianosis periférica, edemas vespertinos bilaterales con fóvea.",
             palpacion: "Desplazamiento del choque de punta hacia abajo y afuera (línea axilar anterior), reflujo hepatoyugular positivo.",
@@ -87,179 +96,13 @@
           fisiopatologia: "Sustitución del aire alveolar por exudado inflamatorio, líquido o tejido sólido, manteniendo la permeabilidad bronquial principal.",
           netterRef: "Netter's Internal Medicine: Neumonías e Infecciones del Parénquima Pulmonar.",
           califanoRef: "Barré-Califano: Exploración semiológica del frémito táctil y auscultación del soplo tubárico.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Neumonia+Condensacion",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Tremito+Tactil",
           hallazgos: {
             inspeccion: "Disminución de la expansibilidad torácica en el hemitórax afectado.",
             palpacion: "Aumento acentuado de las vibraciones vocales (frémito táctil) transmitidas por medios sólidos.",
             percusion: "Matidez o submatidez franca en el área comprometida.",
             auscultación: "Respiración soplosa o soplo tubárico, broncofonía y estertores crepitantes inspiratorios."
-          }
-        },
-        {
-          id: "resp-derrame",
-          titulo: "Síndrome de Derrame Pleural",
-          fisiopatologia: "Acumulación anormal de líquido en la cavidad pleural por alteración de las presiones hidrostáticas/oncóticas o inflamación pleural.",
-          netterRef: "Netter's Internal Medicine: Trastornos de la Pleura y Derrame.",
-          califanoRef: "Barré-Califano: Maniobras de percusión hídrica y evaluación de la abolición de vibraciones vocales.",
-          hallazgos: {
-            inspeccion: "Abombamiento del hemitórax afectado y disminución de la amplitud respiratoria local.",
-            palpacion: "Abolición total de las vibraciones vocales (frémito táctil) por interposición líquida.",
-            percusion: "Matidez hídrica inalterable con límite cóncavo superior (curva de Damoisau).",
-            auscultación: "Silencio auscultatorio (abolición del murmullo vesicular) y egofonía en el límite superior."
-          }
-        }
-      ]
-    },
-    {
-      sistema: "Aparato Nefrourinario",
-      sindromes: [
-        {
-          id: "nefro-nefritico",
-          titulo: "Síndrome Nefrítico Agudo",
-          fisiopatologia: "Proceso inflamatorio glomerular agudo con proliferación celular endotelial que reduce abruptamente la filtración glomerular.",
-          netterRef: "Netter's Internal Medicine: Glomerulonefritis Agudas y Daño Renal Inmunológico.",
-          califanoRef: "Barré-Califano: Evaluación clínica del edema matutino palpebral y control semiológico de la presión arterial.",
-          hallazgos: {
-            inspeccion: "Edema blando matutino de predominio palpebral/facial, oliguria y facies pálida.",
-            palpacion: "Pulso arterial duro por hipertensión arterial sistémica, puño percusión lumbar indolora o leve.",
-            percusion: "Sin alteraciones toracoabdominales destacables.",
-            auscultación: "Tonos cardíacos normofonéticos con posible componente aórtico reforzado por hipertensión."
-          }
-        },
-        {
-          id: "nefro-nefrotico",
-          titulo: "Síndrome Nefrótico",
-          fisiopatologia: "Aumento masivo de la permeabilidad de la pared capilar glomerular a las proteínas plasmáticas, produciendo proteinuria intensa e hipoalbuminemia.",
-          netterRef: "Netter's Internal Medicine: Síndrome Nefrótico y Nefropatías Membranosas/Focales.",
-          califanoRef: "Barré-Califano: Semiología de edemas graves (anasarca), maniobra de fóvea/godet y matidez desplazable por ascitis.",
-          hallazgos: {
-            inspeccion: "Anasarca (edemas generalizados en cara, miembros y genitales), palidez cutánea y distensión abdominal.",
-            palpacion: "Edema blando, indoloro, frío y con fóvea profunda (signo del godet positivo).",
-            percusion: "Matidez desplazable en flancos ante presencia de ascitis peritoneal trasudativa.",
-            auscultación: "Ruidos cardíacos puros; eventual hipofonía pulmonar basal si se asocia a hidrotórax."
-          }
-        }
-      ]
-    },
-    {
-      sistema: "Endocrinología y Metabolismo",
-      sindromes: [
-        {
-          id: "endocrino-hiper",
-          titulo: "Síndrome de Hipertiroidismo",
-          fisiopatologia: "Exceso sostenido de hormonas tiroideas circulantes que acelera drásticamente el metabolismo celular y la sensibilidad adrenérgica.",
-          netterRef: "Netter's Internal Medicine: Trastornos Autoinmunes y Funcionales de la Tiroides.",
-          califanoRef: "Barré-Califano: Inspección de signos oculares (exoftalmos), palpación bimanual del bocio y auscultación de soplos glandulares.",
-          hallazgos: {
-            inspeccion: "Bocio difuso, exoftalmos, pérdida ponderal con apetito conservado, temblor fino distal y piel caliente.",
-            palpacion: "Glándula tiroides aumentada de consistencia elástica con posible frémito palpable.",
-            percusion: "Área torácica sin alteraciones específicas glandulares.",
-            auscultación: "Taquicardia sinusal persistente, tonos hiperdinámicos y soplo sistólico vascular tiroideo."
-          }
-        },
-        {
-          id: "endocrino-hipo",
-          titulo: "Síndrome de Hipotiroidismo",
-          fisiopatologia: "Déficit funcional de tirohormonas que desacelera los procesos metabólicos y promueve la acumulación tisular de glucosaminoglicanos (mixedema).",
-          netterRef: "Netter's Internal Medicine: Tiroiditis Autoinmune y Falla Glandular Primaria.",
-          califanoRef: "Barré-Califano: Inspección de la facie mixedematosa, piel fría/pastosa y lentitud de reflejos miotáticos.",
-          hallazgos: {
-            inspeccion: "Facie mixedematosa (edema periorbitario, macroglosia), alopecia de la cola de las cejas, piel seca y amarillenta.",
-            palpacion: "Piel fría y pastosa, edema duro que no deja fóvea marcada, pulso bradicárdico.",
-            percusion: "Posible aumento del área cardíaca si existe derrame pericárdico secundario.",
-            auscultación: "Bradicardia sinusal y ruidos cardíacos apagados."
-          }
-        },
-        {
-          id: "endocrino-cushing",
-          titulo: "Síndrome de Cushing",
-          fisiopatologia: "Hipercortisolismo crónico endógeno o exógeno que genera catabolismo proteico, redistribución grasa e hipertensión arterial.",
-          netterRef: "Netter's Internal Medicine: Patología Suprarrenal e Hiperfunción Corticoadrenal.",
-          califanoRef: "Barré-Califano: Inspección de estrías violáceas, giba dorsal ('búfalo') y distribución centrípeta de la grasa.",
-          hallazgos: {
-            inspeccion: "Facie en 'luna llena', adiposidad centrípeta (tronco y cuello), estrías atrofiadas violáceas en abdomen y sufusiones hemorrágicas.",
-            palpacion: "Piel delgada y atrófica, debilidad muscular proximal evidente en miembros inferiores.",
-            percusion: "Sin alteraciones percutorias viscerales específicas.",
-            auscultación: "Hipertensión arterial con refuerzo de A2 en foco aórtico."
-          }
-        }
-      ]
-    },
-    {
-      sistema: "Gastroenterología y Hepatología",
-      sindromes: [
-        {
-          id: "gastro-portal",
-          titulo: "Síndrome de Hipertensión Portal",
-          fisiopatologia: "Incremento del gradiente de presión venosa portal (habitualmente intrahepático por cirrosis) con apertura de colaterales portosistémicas.",
-          netterRef: "Netter's Internal Medicine: Complicaciones de la Cirrosis y Hipertensión Portal.",
-          califanoRef: "Barré-Califano: Semiología de la pared abdominal (circulación colateral, cabeza de medusa) y búsqueda de ascitis.",
-          hallazgos: {
-            inspeccion: "Circulación colateral superficial abdominal, arañas vasculares, ictericia y distensión por ascitis.",
-            palpacion: "Esplenomegalia firme de descenso progresivo, hepatomegalia o hígado pequeño nodular.",
-            percusion: "Matidez desplazable en flancos y signo del témpano positivo por líquido libre peritoneal.",
-            auscultación: "Posible soplo venoso umbilical (Cruveilhier-Baumgarten)."
-          }
-        },
-        {
-          id: "gastro-ileo",
-          titulo: "Obstrucción Intestinal (Íleo Mecánico)",
-          fisiopatologia: "Bloqueo lumenal mecánico al tránsito intestinal que desencadena distensión retrógrada, hiperperistaltismo de lucha y alteración hidroelectrolítica.",
-          netterRef: "Netter's Internal Medicine: Obstrucción de Intestino Delgado y Grueso.",
-          califanoRef: "Barré-Califano: Inspección de reptación intestinal, palpación de resistencia y auscultación de borborigmos metálicos.",
-          hallazgos: {
-            inspeccion: "Distensión abdominal difusa, asimetría parietal y visualización de ondas peristálticas de lucha (signo de Kussmaul).",
-            palpacion: "Abdomen tenso, doloroso a la palpación difusa, sin signos iniciales de peritonitis hasta estadios complicados.",
-            percusion: "Timpanismo acentuado y de timbre alto sobre asas meteorizadas.",
-            auscultación: "Ruidos hidroaéreos aumentados de frecuencia y timbre metálico ('ruidos de lucha'); silencio en fases paralíticas tardías."
-          }
-        },
-        {
-          id: "gastro-ictericia",
-          titulo: "Síndrome Ictérico (Colestasis Mecánica)",
-          fisiopatologia: "Impedimento al flujo biliar colédoco-duodenal por litiasis o neoplasia que genera hiperbilirrubinemia directa y coluria.",
-          netterRef: "Netter's Internal Medicine: Vías Biliares y Obstrucción Coledociana.",
-          califanoRef: "Barré-Califano: Inspección de ictericia verdínica/rubínica, palpación del signo de Bard y Pick (Courvoisier-Terrier).",
-          hallazgos: {
-            inspeccion: "Ictericia franca en escleras y piel (tinte verdínico), acolia (heces blanquecinas) y coluria (orina hipercoloreada).",
-            palpacion: "Vesícula biliar distendida e indolora palpable en hipocondrio derecho (Signo de Courvoisier-Terrier en patología tumoral).",
-            percusion: "Matidez hepática conservada o aumentada.",
-            auscultación: "Ruidos hidroaéreos normales."
-          }
-        }
-      ]
-    },
-    {
-      sistema: "Neurología Clínica",
-      sindromes: [
-        {
-          id: "neuro-meningeo",
-          titulo: "Síndrome Meníngeo",
-          fisiopatologia: "Inflamación infecciosa o irritativa de las leptomeninges que genera hipertensión endocraneana y radiculoneuritis refleja.",
-          netterRef: "Netter's Internal Medicine: Infecciones del Sistema Nervioso Central y Meningitis.",
-          califanoRef: "Barré-Califano: Maniobras clásicas de rigidez de nuca, signo de Brudzinski y signo de Kernig.",
-          hallazgos: {
-            inspeccion: "Actitud en gatillo de fusil, facies álgica, hiperestesia cutánea universal y fotofobia.",
-            palpacion: "Rigidez de nuca insalvable al intentar la flexión pasiva; contractura muscular paravertebral.",
-            percusion: "No aplicable de forma diagnóstica habitual.",
-            auscultación: "Bradicardia relativa inicial por hipertensión endocraneana."
-          }
-        }
-      ]
-    },
-    {
-      sistema: "Aparato Locomotor",
-      sindromes: [
-        {
-          id: "locomotor-artritis",
-          titulo: "Síndrome Articular Inflamatorio (Artritis)",
-          fisiopatologia: "Inflamación de la membrana sinovial con exudación intraarticular, hiperemia y destrucción progresiva del cartílago hialino.",
-          netterRef: "Netter's Internal Medicine: Artritis Reumatoide y Artropatías Inflamatorias.",
-          califanoRef: "Barré-Califano: Palpación de calor local, choque rotuliano en rodilla y maniobras de rango articular pasivo/activo.",
-          hallazgos: {
-            inspeccion: "Tumefacción articular, eritema suprayacente y actitud articular en flexión antiálgica.",
-            palpacion: "Aumento de la temperatura local, dolor punzante a la palpación articular y choque rotuliano positivo si hay derrame.",
-            percusion: "No aplicable.",
-            auscultación: "Crepitaciones gruesas articulares durante la movilidad pasiva."
           }
         }
       ]
@@ -312,9 +155,20 @@
         <p><strong>Fisiopatología:</strong> ${s.fisiopatologia}</p>
         
         <div class="ref-box">
-          <h4>📚 Referencias Cruzadas (Netter & Barré-Califano)</h4>
+          <h4>📚 Referencias Cruzadas & Láminas Ilustrativas</h4>
           <p style="margin: 0 0 0.5rem 0;"><strong>Enfoque Netter:</strong> ${s.netterRef}</p>
           <p style="margin: 0;"><strong>Maniobra / Descripción Califano:</strong> ${s.califanoRef}</p>
+        </div>
+
+        <div class="image-grid">
+          <div class="image-box">
+            <strong>Ilustración Tratado Netter</strong>
+            <img src="${s.netterImg}" alt="Esquema Netter">
+          </div>
+          <div class="image-box">
+            <strong>Esquema Maniobra Barré-Califano</strong>
+            <img src="${s.califanoImg}" alt="Esquema Califano">
+          </div>
         </div>
       </div>
       
