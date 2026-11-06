@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Plataforma de Semiología Médica - Barré & Califano</title>
+  <title>Plataforma de Semiología y Medicina Clínica - Netter & Barré-Califano</title>
   <style>
     :root {
       --primary: #1e3a8a;
@@ -27,67 +27,66 @@
 <body>
 
 <header>
-  <h1>Semiología Médica - Plataforma Sindromática</h1>
-  <p>Basado en el índice oficial | Barré & Califano</p>
+  <h1>Plataforma de Semiología y Medicina Clínica</h1>
+  <p>Integración Netter (Medicina Interna) & Barré-Califano (Semiología Clásica)</p>
 </header>
 
 <nav id="moduleNav">
-  <!-- Botones de navegación dinámicos -->
+  <!-- Navegación dinámica -->
 </nav>
 
 <main id="moduleContent">
-  <!-- Contenido del síndrome activo -->
+  <!-- Contenido activo -->
 </main>
 
 <script>
-  // Estructura ordenada estrictamente según el índice del manual
   const sindromes = [
     {
-      id: "cap3-resp-condensacion",
-      capitulo: "Capítulo 3: Semiotecnia del tórax (Aparato Respiratorio)",
-      titulo: "Síndrome de Condensación Pulmonar",
-      fisiopatologia: "Reemplazo del aire alveolar por exudado, trasudado o tejido sólido.",
+      id: "netter-aortica-estenosis",
+      capitulo: "Capítulo 3 (Netter / Califano): Valvulopatías Aórticas",
+      titulo: "Estenosis Aórtica Severa",
+      fisiopatologia: "Sobrecarga de presión ventricular izquierda que conduce a hipertrofia concéntrica y disfunción miocárdica.",
       hallazgos: {
-        inspeccion: "Disminución de la expansión respiratoria en el lado afectado.",
-        palpacion: "Aumento de las vibraciones vocales (frémito táctil).",
-        percusion: "Matidez o submatidez localizada.",
-        auscultación: "Soplo tubario, estertores crepitantes, abolición del murmullo vesicular."
+        inspeccion: "Pulso arterial parvus (pequeño) y tardus (ascenso retardado); choque de punta sostenido.",
+        palpacion: "Frémito sistólico en foco aórtico y cuello; latido hiperdinámico localizado.",
+        percusion: "Área cardíaca normal o levemente aumentada en estadios avanzados.",
+        auscultación: "Soplo sistólico eyectivo rudo en foco aórtico con irradiación a carótidas; disminución o ausencia de A2."
       }
     },
     {
-      id: "cap3-resp-derrame",
-      capitulo: "Capítulo 3: Semiotecnia del tórax (Aparato Respiratorio)",
-      titulo: "Síndrome de Derrame Pleural",
-      fisiopatologia: "Acumulación líquida en la cavidad pleural que comprime el parénquima.",
-      hallazgos: {
-        inspeccion: "Movilidad disminuida, abovedamiento e espacios intercostales amplios.",
-        palpacion: "Abolición o franca disminución de las vibraciones vocales.",
-        percusion: "Matidez hídrica con límite superior cóncavo (curva de Damoiseau).",
-        auscultación: "Silencio auscultatorio o abolición del murmurlo vesicular."
-      }
-    },
-    {
-      id: "cap4-cv-insuficiencia",
-      capitulo: "Capítulo 4: Semiotecnia del tórax (Aparato Circulatorio)",
+      id: "netter-insuficiencia-cardiaca",
+      capitulo: "Capítulo 5 (Netter): Insuficiencia Cardíaca Sistólica",
       titulo: "Síndrome de Insuficiencia Cardíaca Congestiva",
-      fisiopatologia: "Incapacidad miocárdica para mantener el volumen minuto adecuado a expensas de presiones elevadas.",
+      fisiopatologia: "Incapacidad del corazón para mantener el gasto cardíaco adecuado a los requerimientos tisulares con presiones de llenado elevadas.",
       hallazgos: {
-        inspeccion: "Ingurgitación yugular, edemas vespertinos con fóvea, cianosis periférica.",
-        palpacion: "Desplazamiento del choque de punta hacia abajo y afuera (cardiomegalia).",
-        percusion: "Aumento del área de matidez cardíaca absoluta y relativa.",
-        auscultación: "Taquicardia, tercer o cuarto ruido (ritmo de galope), soplos funcionales."
+        inspeccion: "Ingurgitación yugular, cianosis periférica, edemas vespertinos con fóvea.",
+        palpacion: "Desplazamiento del choque de punta hacia abajo y afuera (cardiomegalia), reflujo hepatoyugular positivo.",
+        percusion: "Aumento del área de matidez cardíaca global.",
+        auscultación: "Taquicardia, tercer ruido (S3) por sobrecarga de volumen, cuarto ruido (S4) y soplos funcionales."
       }
     },
     {
-      id: "cap7-abd-ascitis",
-      capitulo: "Capítulo 7: Semiotecnia del abdomen",
-      titulo: "Síndrome Ascítico",
-      fisiopatologia: "Acumulación de líquido libre en la cavidad peritoneal por hipertensión portal u otros factores.",
+      id: "netter-condensacion-pulmonar",
+      capitulo: "Capítulo de Neumología (Netter) & Semiología Pulmonar (Califano)",
+      titulo: "Síndrome de Condensación Pulmonar",
+      fisiopatologia: "Relleno alveolar por exudado, trasudado o tejido tumoral, con persistencia de la permeabilidad bronquial (ej. Neumonía lobar).",
       hallazgos: {
-        inspeccion: "Abdomen globuloso ('en batracio'), eversión umbilical, circulación colateral.",
-        palpacion: "Signo de la ola positivo, peloteo hepático (signo del témpano).",
-        percusion: "Matidez desplazable en flancos y matidez fija de concavidad superior.",
-        auscultación: "Ruidos hidroaéreos normales o disminuidos; soplos vasculares."
+        inspeccion: "Disminución de la expansibilidad torácica en el hemitórax afectado.",
+        palpacion: "Aumento notable de las vibraciones vocales (frémito táctil) debido a la sólida transmisión a través de medios densos.",
+        percusion: "Matidez o submatidez en el área afectada.",
+        auscultación: "Respiración soplosa o soplo tubárico, broncofonía, pectoriloquia y estertores crepitantes al final de la inspiración."
+      }
+    },
+    {
+      id: "netter-derrame-pleural",
+      capitulo: "Capítulo de Neumología (Netter) & Semiología Pulmonar (Califano)",
+      titulo: "Síndrome de Derrame Pleural",
+      fisiopatologia: "Acumulación patológica de líquido en el espacio pleural por aumento de presión hidrostática, disminución de oncótica o inflamación.",
+      hallazgos: {
+        inspeccion: "Abombamiento del hemitórax afectado y disminución de movimientos respiratorios.",
+        palpacion: "Abolición o disminución absoluta de las vibraciones vocales (frémito táctil) por interposición líquida.",
+        percusion: "Matidez hídrica franca (de escudete o con línea parabólica de Damoisau).",
+        auscultación: "Silencio auscultatorio (abolición del murmullo vesicular) y egofonía en el límite superior del derrame."
       }
     }
   ];
@@ -115,9 +114,9 @@
         <p><strong>Fisiopatología:</strong> ${s.fisiopatologia}</p>
       </div>
       <div class="card">
-        <h3>Examen Físico Semiológico</h3>
+        <h3>Examen Físico y Maniobras Semiológicas</h3>
         <div class="grid">
-          <div class="grid-item"><strong>Inspección:</strong> ${s.hallazgos.inspeccion}</div>
+          <div class="grid-item"><strong>Inspección / Pulso:</strong> ${s.hallazgos.inspeccion}</div>
           <div class="grid-item"><strong>Palpación:</strong> ${s.hallazgos.palpacion}</div>
           <div class="grid-item"><strong>Percusión:</strong> ${s.hallazgos.percusion}</div>
           <div class="grid-item"><strong>Auscultación:</strong> ${s.hallazgos.auscultación}</div>
