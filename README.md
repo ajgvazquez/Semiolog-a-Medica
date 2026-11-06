@@ -1,2 +1,2 @@
-# Semiolog-a-Medica
+# Semiologia-Medica
 Plataforma Modular Sindromatica
