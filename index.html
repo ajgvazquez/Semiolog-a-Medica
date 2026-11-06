@@ -59,7 +59,7 @@
           id: "cardio-coronaria-angina",
           titulo: "Cardiopatía Coronaria: Angina de Pecho",
           fisiopatologia: "Isquemia miocárdica transitoria por desequilibrio entre el aporte y la demanda de oxígeno sin necrosis tisular irreversible.",
-          netterRef: "Netter's Internal Medicine: Cardiopatía Coronaria - Anatomía de Arterias Coronarias y Angina (pág. 26-30).",
+          netterRef: "Netter's Internal Medicine: Cardiopatía Coronaria - Anatomía de Arterias Coronarias y Angina.",
           califanoRef: "Barré-Califano: Semiología del dolor torácico isquémico (Signo de Levine, irradiación ulnar/mandibular y gatillos).",
           netterImg: "https://via.placeholder.com/400x250?text=Netter:+Arterias+Coronarias+y+Angina",
           califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Signo+de+Levine+y+Dolor",
@@ -74,6 +74,125 @@
           id: "cardio-coronaria-iam",
           titulo: "Infarto Agudo de Miocardio (IAM) y Complicaciones",
           fisiopatologia: "Necrosis miocárdica irreversible secundaria a oclusión trombótica aguda de una arteria coronaria epicárdica.",
-          netterRef: "Netter's Internal Medicine: Infarto de Miocardio y Complicaciones (pág. 35-42).",
+          netterRef: "Netter's Internal Medicine: Infarto de Miocardio y Complicaciones.",
           califanoRef: "Barré-Califano: Inspección de choque hipocinético, auscultación de roce pericárdico epistenocardico y soplos de ruptura.",
           netterImg: "https://via.placeholder.com/400x250?text=Netter:+Necrosis+y+Complicaciones+IAM",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Auscultacion+y+Roce+Epistenocardico",
+          hallazgos: {
+            inspeccion: "Intensa palidez cutáneo-mucosa, sudoración profusa, frialdad distal, disnea y eventual colapso circulatorio.",
+            palpacion: "Choque de punta hipocinético o discinético. Posible frémito en caso de ruptura del tabique interventricular.",
+            percusion: "Matidez cardíaca aumentada si evoluciona con dilatación ventricular rápida.",
+            auscultación: "Ruidos cardíacos hipofonéticos, gallope por S3/S4, soplo holosistólico nuevo (ruptura papilar) o roce pericárdico."
+          }
+        },
+        {
+          id: "cardio-ritmo-bradi",
+          titulo: "Trastornos del Ritmo: Bradiarritmias y Bloqueos AV",
+          fisiopatologia: "Falla en la automatización del nódulo sinusal o interrupción en la conducción de impulsos a través del sistema His-Purkinje.",
+          netterRef: "Netter's Internal Medicine: Bloqueos de Conducción y Bradicardias.",
+          califanoRef: "Barré-Califano: Semiología de los pulsos arteriales de baja frecuencia, ondas 'a' gigantes en pulso yugular (onda en cañón).",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Sistema+de+Conduccion+y+Bloqueos",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Pulso+Venoso+Onda+a+en+Cañon",
+          hallazgos: {
+            inspeccion: "Bradipsiquia, mareos posturales, episodios sincopales (Stokes-Adams) y pulso yugular con ondas 'a' en cañón.",
+            palpacion: "Pulso arterial marcadamente bradicárdico (<50 lpm), regular o irregular según el grado de bloqueo.",
+            percusion: "Área cardíaca normal salvo cardiomegalia previa asociada.",
+            auscultación: "Variabilidad en la intensidad del primer ruido (S1 reforzado o 'ruidazo' episódico) y bradicardia austera."
+          }
+        },
+        {
+          id: "cardio-ritmo-taqui",
+          titulo: "Trastornos del Ritmo: Taquiarritmias",
+          fisiopatologia: "Generación anormal de impulsos (reentrada o automatismo aumentado) de origen supraventricular o ventricular.",
+          netterRef: "Netter's Internal Medicine: Taquicardias Supraventriculares y Ventriculares.",
+          califanoRef: "Barré-Califano: Palpación del pulso deficitario en Fibrilación Auricular y maniobras vagales de desaceleración.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Mecanismos+de+Taquiarritmia",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Deficit+de+Pulso+en+FA",
+          hallazgos: {
+            inspeccion: "Palpitaciones en cuello y tórax, ansiedad, pulsaciones yugulares rápidas y desordenadas.",
+            palpacion: "Pulso céler, taquicárdico (>100 lpm), completamente irregular e inequitativo en la Fibrilación Auricular.",
+            percusion: "Matidez cardíaca sin cambios agudos.",
+            auscultación: "Frecuencia cardíaca central superior al pulso periférico (déficit de pulso); ausencia de cuarto ruido."
+          }
+        },
+        {
+          id: "cardio-ic-izq-der",
+          titulo: "Insuficiencia Cardíaca: Izquierda vs Derecha",
+          fisiopatologia: "Disfunción de eyección/llenado que causa congestión retrógrada pulmonar (Izquierda) o congestión sistémica y venosa (Derecha).",
+          netterRef: "Netter's Internal Medicine: Insuficiencia Cardíaca Izquierda y Derecha.",
+          califanoRef: "Barré-Califano: Inspección de ingurgitación yugular 3/3, reflujo hepatoyugular, hepatomegalia congestiva y S3.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Fisiopatologia+IC+Izq+vs+Der",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Reflujo+Hepatoyugular+y+Edemas",
+          hallazgos: {
+            inspeccion: "Disnea de esfuerzo, ortopnea y DPN (IC Izquierda); edema distal en miembros, cianosis e ingurgitación yugular (IC Derecha).",
+            palpacion: "Choque de punta desviado (IC Izquierda); latido sagital de parasternal izquierdo o Signo de Dressler (IC Derecha).",
+            percusion: "Matidez cardíaca aumentada globalmente; submatidez o matidez hepática dolorosa por debajo del reborde costal.",
+            auscultación: "Estertores crepitantes pulmonares basales (IC Izq); galope por S3/S4 y soplo holosistólico de insuficiencia tricúspidea."
+          }
+        },
+        {
+          id: "cardio-inflamatorias-pericarditis",
+          titulo: "Cardiopatías Inflamatorias: Endocarditis, Miocarditis y Pericarditis",
+          fisiopatologia: "Inflamación infecciosa o autoinmune del endocardio/válvulas, miocardio contráctil o pericardio.",
+          netterRef: "Netter's Internal Medicine: Fiebre Reumática, Endocarditis, Miocarditis y Pericarditis.",
+          califanoRef: "Barré-Califano: Auscultación del roce pericárdico sistolodiastólico y búsqueda de fenómenos embólicos periféricos.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Vegetaciones+y+Derrame+Pericardico",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Roce+Pericardico+y+Signo+Kussmaul",
+          hallazgos: {
+            inspeccion: "Lesiones de Janeway, nódulos de Osler y hemorragias en astilla (Endocarditis); postura antiálgica plegada (Pericarditis).",
+            palpacion: "Pulso paradojal de Kussmaul (caída soplada >10mmHg en inspiración durante derrame pericárdico grave).",
+            percusion: "Ampliación de la matidez cardíaca en forma de 'botellón' o copa de champagne (Derrame pericárdico masivo).",
+            auscultación: "Soplos cambiantes de regurgitación (Endocarditis); roce pericárdico 'en rascado de cuero' que no desaparece al apnea."
+          }
+        },
+        {
+          id: "cardio-valvular-aortica",
+          titulo: "Valvulopatías Adquiridas: Estenosis e Insuficiencia Aórtica",
+          fisiopatologia: "Obstrucción al flujo de salida del VI (Estenosis) o regurgitación de volumen diastólico hacia el VI (Insuficiencia).",
+          netterRef: "Netter's Internal Medicine: Valvulopatía Aórtica e Hipertrofias Ventriculares.",
+          califanoRef: "Barré-Califano: Pulsos Parvus-Tardus (Estenosis) vs Pulso Célere/Magno de Corrigan y signo de Musset (Insuficiencia).",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Valvula+Aortica+Estenotica+y+Regurgitante",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Pulso+de+Corrigan+y+Musset",
+          hallazgos: {
+            inspeccion: "Danza carotídea y signo de De Musset (Insuficiencia); palidez y escaso impulso arterial (Estenosis).",
+            palpacion: "Pulso Parvus y Tardus con frémito aórtico (Estenosis); pulso en martillo de agua o Célere y Magno (Insuficiencia).",
+            percusion: "Área cardíaca normal o poco desplazada (Estenosis); cardiomegalia masiva hacia abajo y la izquierda (Insuficiencia).",
+            auscultación: "Soplo sistólico eyectivo romboidal en foco aórtico (Estenosis); soplo diastólico aspirativo decreciente (Insuficiencia)."
+          }
+        },
+        {
+          id: "cardio-valvular-mitral",
+          titulo: "Valvulopatías Adquiridas: Estenosis e Insuficiencia Mitral",
+          fisiopatologia: "Obstrucción al llenado ventricular izquierdo (Estenosis) o reflujo sistólico de sangre desde VI hacia la aurícula izquierda (Insuficiencia).",
+          netterRef: "Netter's Internal Medicine: Valvulopatía Mitral y Tricúspidea.",
+          califanoRef: "Barré-Califano: Auscultación del chasquido de apertura y retumbo diastólico (Estenosis); soplo holosistólico en axila (Insuficiencia).",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Aparato+Valvular+Mitral",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Chasquido+y+Retumbo+Mitral",
+          hallazgos: {
+            inspeccion: "Facie mitral o de Corvisart (rubicundez y cianosis en pómulos); eritema malar.",
+            palpacion: "Frémito diastólico en ápex y latido sagital (Estenosis); choque de punta hiperdinámico y desplazado (Insuficiencia).",
+            percusion: "Crecimiento del arco medio pulmonar en el borde izquierdo del corazón.",
+            auscultación: "Chasquido de apertura, retumbo diastólico con refuerzo presistólico (Estenosis); soplo holosistólico en foco mitral irradiado a axila (Insuficiencia)."
+          }
+        },
+        {
+          id: "cardio-congenitas",
+          titulo: "Cardiopatías Congénitas del Adulto",
+          fisiopatologia: "Anomalías estructurales presentes desde el nacimiento (CIA, CIV, Tetralogía de Fallot, Coartación), con cortocircuito izquierda-derecha o cianóticas.",
+          netterRef: "Netter's Internal Medicine: Cardiopatías Congénitas, Defectos Septales y Fallot.",
+          califanoRef: "Barré-Califano: Inspección de acropaquia/dedos en palillo de tambor, cianosis central y desdoblamiento fijo de S2.",
+          netterImg: "https://via.placeholder.com/400x250?text=Netter:+Anomalias+Septales+y+Fallot",
+          califanoImg: "https://via.placeholder.com/400x250?text=Califano:+Acropaquia+y+Desdoblamiento+S2",
+          hallazgos: {
+            inspeccion: "Cianosis central, cianosis diferencial (miembros inferiores vs superiores) y acropaquia en manos y pies.",
+            palpacion: "Frémito sistólico en margen esternal izquierdo; latido paraesternal amplio por sobrecarga derecha.",
+            percusion: "Aumento de la matidez paratracal derecha o esternal baja.",
+            auscultación: "Desdoblamiento amplio y fijo del segundo ruido R2 (CIA); soplo holosistólico rudo en barra (CIV)."
+          }
+        },
+        {
+          id: "cardio-cor-pulmonale",
+          titulo: "Hipertensión Pulmonar y Cor Pulmonale",
+          fisiopatologia: "Hipertrofia y dilatación del ventrículo derecho secundaria a hipertensión vascular pulmonar derivada de patología parenquimatosa o vascular pulmonar.",
+          netterRef: "Netter's Internal Medicine: Hipertensión Pulmonar, Cor Pulmonale Agudo y Crónico.",
+          califanoRef: "Barré-Califano: Palpación del latido paraesternal izquierdo (Signo de Dressler) y refuerzo del
