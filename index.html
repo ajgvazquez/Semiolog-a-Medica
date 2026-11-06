@@ -15,9 +15,16 @@
     }
     body { font-family: system-ui, -apple-system, sans-serif; margin: 0; background: var(--bg); color: var(--text); }
     header { background: var(--primary); color: white; padding: 1.5rem; text-align: center; }
-    nav { background: var(--secondary); display: flex; overflow-x: auto; padding: 0.5rem; gap: 0.5rem; }
-    nav button { background: rgba(255,255,255,0.15); border: none; color: white; padding: 0.6rem 1rem; border-radius: 4px; cursor: pointer; white-space: nowrap; }
-    nav button:hover, nav button.active { background: white; color: var(--primary); font-weight: bold; }
+    
+    /* Contenedor principal de categorías y submenú */
+    .system-nav { background: var(--primary); display: flex; justify-content: center; flex-wrap: wrap; gap: 0.5rem; padding: 0.5rem; border-top: 1px solid rgba(255,255,255,0.1); }
+    .system-btn { background: rgba(255,255,255,0.15); border: none; color: white; padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-weight: 600; }
+    .system-btn:hover, .system-btn.active { background: var(--accent); color: white; }
+
+    .subnav { background: var(--secondary); display: flex; overflow-x: auto; padding: 0.5rem; gap: 0.5rem; justify-content: center; }
+    .subnav button { background: rgba(255,255,255,0.2); border: none; color: white; padding: 0.5rem 1rem; border-radius: 4px; cursor: pointer; white-space: nowrap; }
+    .subnav button:hover, .subnav button.active { background: white; color: var(--primary); font-weight: bold; }
+
     main { max-width: 950px; margin: 2rem auto; padding: 0 1rem; }
     .card { background: var(--card-bg); border-radius: 8px; padding: 1.5rem; margin-bottom: 1.5rem; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
     .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 1rem; margin-top: 1rem; }
@@ -31,177 +38,44 @@
 
 <header>
   <h1>Plataforma de Semiología y Medicina Clínica</h1>
-  <p>Orden Sistémico Netter (Medicina Interna) & Barré-Califano (Semiología Clásica)</p>
+  <p>Integración Taxonómica: Tratado Netter & Barré-Califano</p>
 </header>
 
-<nav id="moduleNav">
-  <!-- Navegación dinámica -->
-</nav>
+<!-- Botones principales por Aparato/Sistema -->
+<div class="system-nav" id="systemNav"></div>
+
+<!-- Submenú de Síndromes del Aparato Seleccionado -->
+<div class="subnav" id="subNav"></div>
 
 <main id="moduleContent">
-  <!-- Contenido activo -->
+  <!-- Contenido dinámico del síndrome -->
 </main>
 
 <script>
-  const sindromes = [
+  const datosSistemas = [
     {
-      id: "netter-cardio-aortica",
-      seccion: "Sección I: Aparato Cardiovascular (Netter)",
-      titulo: "Estenosis Aórtica Severa",
-      fisiopatologia: "Sobrecarga crónica de presión ventricular izquierda que conduce a hipertrofia concéntrica compensadora y eventual falla miocárdica.",
-      netterRef: "Netter's Internal Medicine: Patología Valvular Aórtica e Hipertrofia Ventricular.",
-      califanoRef: "Barré-Califano: Semiología de los pulsos arteriales (Parvus y Tardus) y auscultación de soplos irradiados a cuello.",
-      hallazgos: {
-        inspeccion: "Pulso arterial parvus y tardus; choque de punta sostenido no desplazado en fases iniciales.",
-        palpacion: "Frémito sistólico palpable en segundo espacio intercostal derecho y escotadura supraesternal.",
-        percusion: "Área cardíaca normal o levemente aumentada hacia abajo y izquierda.",
-        auscultación: "Soplo sistólico eyectivo rudo, crescendo-decrescendo en foco aórtico con irradiación carotídea; disminución de A2."
-      }
-    },
-    {
-      id: "netter-cardio-ic",
-      seccion: "Sección I: Aparato Cardiovascular (Netter)",
-      titulo: "Síndrome de Insuficiencia Cardíaca Sistólica",
-      fisiopatologia: "Incapacidad del miocardio para eyectar un volumen sistólico adecuado, elevando las presiones de llenado diastólico retrógradas.",
-      netterRef: "Netter's Internal Medicine: Insuficiencia Cardíaca Congestiva y Remodelado Ventricular.",
-      califanoRef: "Barré-Califano: Inspección de ingurgitación yugular, búsqueda de reflujo hepatoyugular y auscultación de tercer ruido.",
-      hallazgos: {
-        inspeccion: "Ingurgitación yugular a 45°, cianosis periférica, edemas vespertinos bilaterales con fóvea.",
-        palpacion: "Desplazamiento del choque de punta hacia abajo y afuera (línea axilar anterior), reflujo hepatoyugular positivo.",
-        percusion: "Aumento global de la matidez cardíaca.",
-        auscultación: "Taquicardia sinusal, presencia de tercer ruido (S3) galopante y cuarto ruido (S4)."
-      }
-    },
-    {
-      id: "netter-resp-condensacion",
-      seccion: "Sección II: Aparato Respiratorio (Netter)",
-      titulo: "Síndrome de Condensación Pulmonar",
-      fisiopatologia: "Sustitución del aire alveolar por exudado inflamatorio, líquido o tejido sólido, manteniendo la permeabilidad bronquial principal.",
-      netterRef: "Netter's Internal Medicine: Neumonías e Infecciones del Parénquima Pulmonar.",
-      califanoRef: "Barré-Califano: Exploración semiológica del frémito táctil y auscultación del soplo tubárico.",
-      hallazgos: {
-        inspeccion: "Disminución de la expansibilidad torácica en el hemitórax afectado.",
-        palpacion: "Aumento acentuado de las vibraciones vocales (frémito táctil) transmitidas por medios sólidos.",
-        percusion: "Matidez o submatidez franca en el área comprometida.",
-        auscultación: "Respiración soplosa o soplo tubárico, broncofonía y estertores crepitantes inspiratorios."
-      }
-    },
-    {
-      id: "netter-resp-derrame",
-      seccion: "Sección II: Aparato Respiratorio (Netter)",
-      titulo: "Síndrome de Derrame Pleural",
-      fisiopatologia: "Acumulación anormal de líquido en la cavidad pleural por alteración de las presiones hidrostáticas/oncóticas o inflamación pleural.",
-      netterRef: "Netter's Internal Medicine: Trastornos de la Pleura y Derrame.",
-      califanoRef: "Barré-Califano: Maniobras de percusión hídrica y evaluación de la abolición de vibraciones vocales.",
-      hallazgos: {
-        inspeccion: "Abombamiento del hemitórax afectado y disminución de la amplitud respiratoria local.",
-        palpacion: "Abolición total de las vibraciones vocales (frémito táctil) por interposición líquida.",
-        percusion: "Matidez hídrica inalterable con límite cóncavo superior (curva de Damoisau).",
-        auscultación: "Silencio auscultatorio (abolición del murmullo vesicular) y egofonía en el límite superior."
-      }
-    },
-    {
-      id: "netter-nefro-nefritico",
-      seccion: "Sección III: Aparato Nefrourinario (Netter)",
-      titulo: "Síndrome Nefrítico Agudo",
-      fisiopatologia: "Proceso inflamatorio glomerular agudo con proliferación celular endotelial que reduce abruptamente la filtración glomerular.",
-      netterRef: "Netter's Internal Medicine: Glomerulonefritis Agudas y Daño Renal Inmunológico.",
-      califanoRef: "Barré-Califano: Evaluación clínica del edema matutino palpebral y control semiológico de la presión arterial.",
-      hallazgos: {
-        inspeccion: "Edema blando matutino de predominio palpebral/facial, oliguria y facies pálida.",
-        palpacion: "Pulso arterial duro por hipertensión arterial sistémica, puño percusión lumbar indolora o leve.",
-        percusion: "Sin alteraciones toracoabdominales destacables.",
-        auscultación: "Tonos cardíacos normofonéticos con posible componente aórtico reforzado por hipertensión."
-      }
-    },
-    {
-      id: "netter-endocrino-tiroides",
-      seccion: "Sección IV: Endocrinología y Metabolismo (Netter)",
-      titulo: "Síndrome de Hipertiroidismo",
-      fisiopatologia: "Exceso sostenido de hormonas tiroideas circulantes que acelera drásticamente el metabolismo celular y la sensibilidad adrenérgica.",
-      netterRef: "Netter's Internal Medicine: Trastornos Autoinmunes y Funcionales de la Tiroides.",
-      califanoRef: "Barré-Califano: Inspección de signos oculares (exoftalmos), palpación bimanual del bocio y auscultación de soplos glandulares.",
-      hallazgos: {
-        inspeccion: "Bocio difuso, exoftalmos, pérdida ponderal con apetito conservado, temblor fino distal y piel caliente.",
-        palpacion: "Glándula tiroides aumentada de consistencia elástica con posible frémito palpable.",
-        percusion: "Área torácica sin alteraciones específicas glandulares.",
-        auscultación: "Taquicardia sinusal persistente, tonos hiperdinámicos y soplo sistólico vascular tiroideo."
-      }
-    },
-    {
-      id: "netter-digestivo-portal",
-      seccion: "Sección V: Tracto Digestivo e Hígado (Netter)",
-      titulo: "Síndrome de Hipertensión Portal",
-      fisiopatologia: "Incremento del gradiente de presión venosa portal (habitualmente intrahepático por cirrosis) con apertura de colaterales portosistémicas.",
-      netterRef: "Netter's Internal Medicine: Complicaciones de la Cirrosis y Hipertensión Portal.",
-      califanoRef: "Barré-Califano: Semiología de la pared abdominal (circulación colateral, cabeza de medusa) y búsqueda de ascitis.",
-      hallazgos: {
-        inspeccion: "Circulación colateral superficial abdominal, arañas vasculares, ictericia y distensión por ascitis.",
-        palpacion: "Esplenomegalia firme de descenso progresivo, hepatomegalia o hígado pequeño nodular.",
-        percusion: "Matidez desplazable en flancos y signo del témpano positivo por líquido libre peritoneal.",
-        auscultación: "Posible soplo venoso umbilical (Cruveilhier-Baumgarten)."
-      }
-    },
-    {
-      id: "netter-neurologico-meningeo",
-      seccion: "Sección VI: Neurología Clínica (Netter)",
-      titulo: "Síndrome Meníngeo",
-      fisiopatologia: "Inflamación infecciosa o irritativa de las leptomeninges que genera hipertensión endocraneana y radiculoneuritis refleja.",
-      netterRef: "Netter's Internal Medicine: Infecciones del Sistema Nervioso Central y Meningitis.",
-      califanoRef: "Barré-Califano: Maniobras clásicas de rigidez de nuca, signo de Brudzinski y signo de Kernig.",
-      hallazgos: {
-        inspeccion: "Actitud en gatillo de fusil, facies algica, hiperestesia cutánea universal y fotofobia.",
-        palpacion: "Rigidez de nuca insalvable al intentar la flexión pasiva; contractura muscular paravertebral.",
-        percusion: "No aplicable de forma diagnóstica habitual.",
-        auscultación: "Bradicardia relativa inicial por hipertensión endocraneana."
-      }
-    }
-  ];
-
-  function renderNav() {
-    const nav = document.getElementById('moduleNav');
-    nav.innerHTML = sindromes.map((s, idx) => 
-      `<button onclick="loadModule(${idx})" class="${idx === 0 ? 'active' : ''}">${s.titulo}</button>`
-    ).join('');
-  }
-
-  function loadModule(index) {
-    const buttons = document.querySelectorAll('nav button');
-    buttons.forEach((btn, idx) => {
-      if(idx === index) btn.classList.add('active');
-      else btn.classList.remove('active');
-    });
-
-    const s = sindromes[index];
-    const content = document.getElementById('moduleContent');
-    content.innerHTML = `
-      <div class="card">
-        <small style="color: var(--secondary); font-weight: bold; text-transform: uppercase;">${s.seccion}</small>
-        <h2>${s.titulo}</h2>
-        <p><strong>Fisiopatología:</strong> ${s.fisiopatologia}</p>
-        
-        <div class="ref-box">
-          <h4>📚 Referencias Cruzadas (Netter & Barré-Califano)</h4>
-          <p style="margin: 0 0 0.5rem 0;"><strong>Enfoque Netter:</strong> ${s.netterRef}</p>
-          <p style="margin: 0;"><strong>Maniobra / Descripción Califano:</strong> ${s.califanoRef}</p>
-        </div>
-      </div>
-      
-      <div class="card">
-        <h3>Examen Físico y Hallazgos Semiologicos</h3>
-        <div class="grid">
-          <div class="grid-item"><strong>Inspección:</strong> ${s.hallazgos.inspeccion}</div>
-          <div class="grid-item"><strong>Palpación:</strong> ${s.hallazgos.palpacion}</div>
-          <div class="grid-item"><strong>Percusión:</strong> ${s.hallazgos.percusion}</div>
-          <div class="grid-item"><strong>Auscultación:</strong> ${s.hallazgos.auscultación}</div>
-        </div>
-      </div>
-    `;
-  }
-
-  renderNav();
-  loadModule(0);
-</script>
-
-</body>
-</html>
+      sistema: "Aparato Cardiovascular",
+      sindromes: [
+        {
+          id: "cardio-aortica",
+          titulo: "Estenosis Aórtica Severa",
+          fisiopatologia: "Sobrecarga crónica de presión ventricular izquierda que conduce a hipertrofia concéntrica compensadora y eventual falla miocárdica.",
+          netterRef: "Netter's Internal Medicine: Patología Valvular Aórtica e Hipertrofia Ventricular.",
+          califanoRef: "Barré-Califano: Semiología de los pulsos arteriales (Parvus y Tardus) y auscultación de soplos irradiados a cuello.",
+          hallazgos: {
+            inspeccion: "Pulso arterial parvus y tardus; choque de punta sostenido no desplazado en fases iniciales.",
+            palpacion: "Frémito sistólico palpable en segundo espacio intercostal derecho y escotadura supraesternal.",
+            percusion: "Área cardíaca normal o levemente aumentada hacia abajo y izquierda.",
+            auscultación: "Soplo sistólico eyectivo rudo en foco aórtico irradiado a carótidas; disminución de A2."
+          }
+        },
+        {
+          id: "cardio-ic",
+          titulo: "Insuficiencia Cardíaca Sistólica",
+          fisiopatologia: "Incapacidad del miocardio para eyectar un volumen sistólico adecuado, elevando las presiones de llenado diastólico retrógradas.",
+          netterRef: "Netter's Internal Medicine: Insuficiencia Cardíaca Congestiva y Remodelado Ventricular.",
+          califanoRef: "Barré-Califano: Inspección de ingurgitación yugular, búsqueda de reflujo hepatoyugular y auscultación de tercer ruido.",
+          hallazgos: {
+            inspeccion: "Ingurgitación yugular a 45°, cianosis periférica, edemas vespertinos bilaterales con fóvea.",
+            palpacion: "Desplazamiento del choque de punta hacia abajo y afuera (línea axilar anterior), reflujo hepatoyugular positivo.",
+            perc
